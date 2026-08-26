@@ -28,3 +28,11 @@ This build is for debugging deployment/cache issues. It intentionally does NOT u
 - Removed accidental Movies/Concerts text contamination embedded in the Museums/Other Entertainment icon crops.
 - Rebuilt the Sam's Club icon with an uppercase S.
 - Uses new `assets_v09` URLs to avoid old image reuse.
+
+
+## v0.10 True Square Icons
+- rebuilt icons from the original approved crops rather than the damaged v0.9 crops
+- the actual icon tile is geometrically resized to a square; no transparent padding trick
+- removed accidental Movies/Concerts contamination from museum/other entertainment source crops
+- kept the uppercase Sam's Club icon
+- visible footer version: v0.10 true square icons

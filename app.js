@@ -2,7 +2,7 @@
   const data = window.WTC_DATA;
   const WALLET_KEY = "wtc.wallet.v0.2";
   const PREFS_KEY = "wtc.prefs.v0.2";
-  const LANG_KEY = "wtc.lang.v0.9";
+  const LANG_KEY = "wtc.lang.v0.10";
   const $ = id => document.getElementById(id);
   const homeGrid = $("homeGrid");
   const resultPanel = $("resultPanel");
@@ -219,7 +219,7 @@
   function uiLabel(id) { return categoryName(id); }
 
   function iconHTML(id) {
-    return `<img class="icon-image" src="assets_v09/icons/${escapeHtml(id)}.png?v=09" alt="">`;
+    return `<img class="icon-image" src="assets_v10/icons/${escapeHtml(id)}.png?v=10" alt="">`;
   }
 
   function renderHome() {
