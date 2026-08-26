@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <title>WTC — Personal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="brand">WTC <span class="sparkles">✦</span></div>
+        <div id="quarterLabel" class="quarter-pill"></div>
+      </div>
+      <div class="top-actions">
+        <select id="languageSelect" class="language-select" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh">中文</option>
+          <option value="es">ES</option>
+        </select>
+        <button id="openWalletBtn" class="text-button" data-i18n="myCards">My Cards</button>
+      </div>
+    </header>
+
+    <section id="homeGrid" class="home-grid" aria-label="Spending shortcuts"></section>
+
+    <section id="resultPanel" class="result-panel hidden" aria-live="polite">
+      <button id="closeResultBtn" class="close-button" aria-label="Close">×</button>
+      <div id="resultCategory" class="eyebrow"></div>
+      <div id="bestCardArea"></div>
+      <div id="alternativesArea"></div>
+      <div id="inactiveBonusArea"></div>
+      <div id="categoryHelpArea"></div>
+    </section>
+
+    <section class="status-strip">
+      <strong id="updatedLabel"></strong> · <span>v0.8 clean deploy</span>
+      <div data-i18n="prototypeDisclaimer">Personal prototype · verify issuer terms before unusual purchases.</div>
+    </section>
+  </main>
+
+  <dialog id="walletDialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-header">
+        <div>
+          <div class="eyebrow" data-i18n="walletSettings">Wallet & settings</div>
+          <h2 data-i18n="myCards">My Cards</h2>
+        </div>
+        <button class="close-button" value="cancel" aria-label="Close">×</button>
+      </div>
+
+      <p class="dialog-copy" data-i18n="localOnly">Your selections stay only in this browser/device.</p>
+
+      <div id="walletList" class="wallet-list"></div>
+
+      <div class="settings-card">
+        <div class="settings-title" data-i18n="quarterlyActivation">Quarterly bonus activation</div>
+        <label class="toggle-row">
+          <input id="chaseActivated" type="checkbox">
+          <span>
+            <strong data-i18n="chaseActivated">Chase Freedom Q3 activated</strong>
+            <small data-i18n="needed5">Needed for the 5% Q3 categories.</small>
+          </span>
+        </label>
+        <label class="toggle-row">
+          <input id="discoverActivated" type="checkbox">
+          <span>
+            <strong data-i18n="discoverActivated">Discover Q3 activated</strong>
+            <small data-i18n="needed5">Needed for the 5% Q3 categories.</small>
+          </span>
+        </label>
+      </div>
+
+      <div class="settings-card">
+        <label class="settings-title" for="samsMembership" data-i18n="samsMembership">Sam's Club membership</label>
+        <select id="samsMembership">
+          <option value="unknown" data-i18n="choose">Choose…</option>
+          <option value="club">Club</option>
+          <option value="plus">Plus</option>
+        </select>
+        <small class="setting-help" data-i18n="samsHelp">This changes the best card for eligible Sam's Club in-club purchases.</small>
+      </div>
+
+      <div class="dialog-actions">
+        <button id="selectAllBtn" type="button" class="secondary-button" data-i18n="selectAll">Select all</button>
+        <button id="saveWalletBtn" value="default" class="primary-button" data-i18n="save">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="rewards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

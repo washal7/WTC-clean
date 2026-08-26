@@ -1,0 +1,17 @@
+{
+  "name": "WTC",
+  "short_name": "WTC",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f6f2",
+  "theme_color": "#ffffff",
+  "description": "WTC mockup-matched rewards picker using fixed icon image assets for consistent rendering.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
