@@ -2,7 +2,7 @@
   const data = window.WTC_DATA;
   const WALLET_KEY = "wtc.wallet.v0.2";
   const PREFS_KEY = "wtc.prefs.v0.2";
-  const LANG_KEY = "wtc.lang.v0.8";
+  const LANG_KEY = "wtc.lang.v0.9";
   const $ = id => document.getElementById(id);
   const homeGrid = $("homeGrid");
   const resultPanel = $("resultPanel");
@@ -188,7 +188,10 @@
   }
   let lang = detectLanguage();
   const t = key => I18N[lang][key] || I18N.en[key] || key;
-  const categoryName = id => (CATEGORY_NAMES[lang][id] || CATEGORY_NAMES.en[id] || id);
+  const categoryName = id => (
+    CATEGORY_NAMES[lang]?.[id] || I18N[lang]?.[id] ||
+    CATEGORY_NAMES.en?.[id] || I18N.en?.[id] || id
+  );
 
   function translateNote(text="") { return lang === "en" ? text : (NOTE_TRANSLATIONS[lang]?.[text] || text); }
   function translateDisplay(text="") {
@@ -213,10 +216,10 @@
   const cardById = id => data.cards.find(c => c.id === id);
 
   function resolveTargetId(uiId) { return ENTERTAINMENT_ALIASES.includes(uiId) ? "entertainment" : uiId; }
-  function uiLabel(id) { return t(id) || categoryName(id); }
+  function uiLabel(id) { return categoryName(id); }
 
   function iconHTML(id) {
-    return `<img class="icon-image" src="assets_v08/icons/${escapeHtml(id)}.png?v=08" alt="">`;
+    return `<img class="icon-image" src="assets_v09/icons/${escapeHtml(id)}.png?v=09" alt="">`;
   }
 
   function renderHome() {

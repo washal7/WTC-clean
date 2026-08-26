@@ -19,3 +19,12 @@ Uses icon image assets cropped directly from the approved mockup. Labels are bel
 
 ## v0.8 clean deploy
 This build is for debugging deployment/cache issues. It intentionally does NOT use manifest or service worker and uses a renamed asset folder `assets_v08` plus `?v=08` asset query strings. The page also visibly shows `v0.8 clean deploy` at the bottom.
+
+
+## v0.9 root-cause fixes
+- Fixed category label bug: internal IDs such as `costcoGas`, `samsCafe`, `grocery` no longer appear in the UI.
+- English labels now display as Gas, EV Charging, Costco Gas, Costco Food Court, Sam's Club, Sam's Gas, Sam's Café, Grocery, Walmart, Target, Amazon, etc.
+- Re-cropped every icon to the actual square tile and normalized symmetric padding.
+- Removed accidental Movies/Concerts text contamination embedded in the Museums/Other Entertainment icon crops.
+- Rebuilt the Sam's Club icon with an uppercase S.
+- Uses new `assets_v09` URLs to avoid old image reuse.
