@@ -36,3 +36,9 @@ This build is for debugging deployment/cache issues. It intentionally does NOT u
 - removed accidental Movies/Concerts contamination from museum/other entertainment source crops
 - kept the uppercase Sam's Club icon
 - visible footer version: v0.10 true square icons
+
+
+## v0.11 forced square tiles
+- trims transparent margins from every icon
+- resizes the actual visible icon tile to an exact 1:1 square
+- uses object-fit: fill so the rendered tile stays square on all screens
