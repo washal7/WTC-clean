@@ -42,3 +42,7 @@ This build is for debugging deployment/cache issues. It intentionally does NOT u
 - trims transparent margins from every icon
 - resizes the actual visible icon tile to an exact 1:1 square
 - uses object-fit: fill so the rendered tile stays square on all screens
+
+
+## v0.13
+Grouped icons are re-extracted from the full approved mockup. The dark panel around each icon is removed to transparency first; only then is the visible tile resized to a true 1:1 square. Standalone icons also have their old dark crop background removed.
