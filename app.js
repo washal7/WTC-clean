@@ -2,7 +2,7 @@
   const data = window.WTC_DATA;
   const WALLET_KEY = "wtc.wallet.v0.2";
   const PREFS_KEY = "wtc.prefs.v0.2";
-  const LANG_KEY = "wtc.lang.v0.13";
+  const LANG_KEY = "wtc.lang.v0.14";
   const $ = id => document.getElementById(id);
   const homeGrid = $("homeGrid");
   const resultPanel = $("resultPanel");
@@ -204,7 +204,7 @@
     document.querySelectorAll("[data-i18n]").forEach(el => { const v = I18N[lang][el.dataset.i18n]; if (v) el.textContent = v; });
     $("quarterLabel").textContent = t("quarter");
     $("updatedLabel").textContent = t("verified");
-    $("languageSelect").value = lang;
+    document.querySelectorAll(".language-option").forEach(btn => btn.classList.toggle("active", btn.dataset.lang === lang));
   }
   function escapeHtml(value="") {
     return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
@@ -219,7 +219,10 @@
   function uiLabel(id) { return categoryName(id); }
 
   function iconHTML(id) {
-    return `<img class="icon-image" src="assets_v13/icons/${escapeHtml(id)}.png?v=11" alt="">`;
+    const src = SINGLES.includes(id)
+      ? `v14_${escapeHtml(id)}.png?v=14`
+      : `assets_v13/icons/${escapeHtml(id)}.png?v=14`;
+    return `<img class="icon-image" src="${src}" alt="">`;
   }
 
   function renderHome() {
@@ -351,7 +354,13 @@
     $("samsMembership").value = prefs.samsMembership || "unknown";
   }
 
-  $("languageSelect").addEventListener("change", e => { lang = e.target.value; localStorage.setItem(LANG_KEY, lang); applyStaticTranslations(); renderHome(); resultPanel.classList.add("hidden"); });
+  document.querySelectorAll(".language-option").forEach(btn => btn.addEventListener("click", () => {
+    lang = btn.dataset.lang;
+    localStorage.setItem(LANG_KEY, lang);
+    applyStaticTranslations();
+    renderHome();
+    resultPanel.classList.add("hidden");
+  }));
   $("openWalletBtn").addEventListener("click", () => { renderWallet(); walletDialog.showModal(); });
   $("selectAllBtn").addEventListener("click", () => walletList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true));
   $("saveWalletBtn").addEventListener("click", () => {
