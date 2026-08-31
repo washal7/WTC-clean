@@ -46,3 +46,16 @@ This build is for debugging deployment/cache issues. It intentionally does NOT u
 
 ## v0.13
 Grouped icons are re-extracted from the full approved mockup. The dark panel around each icon is removed to transparency first; only then is the visible tile resized to a true 1:1 square. Standalone icons also have their old dark crop background removed.
+
+
+## v0.14
+- Rebuilt all six standalone large icons from the approved original mockup, preserving full square rounded corners.
+- Small grouped icons remain the approved v0.13 assets.
+- Language chooser is now a visible three-option segmented control: EN / 中文 / Español.
+
+
+## v0.15 square fix
+- fixed large icons (Dining, Department Stores, Drugstore, Travel, Transit, Other) by re-cropping from the original glossy mockup and re-centering them as true square transparent tiles
+- fixed Grocery, Amazon, Other Online Shopping group tiles by re-cropping from the original glossy mockup and rebuilding them as square transparent tiles
+- kept language switch as EN / 中文 / Español
+- keeps the v13/v14 assets around, but the app now uses assets_v15 and v15_* icons
