@@ -59,3 +59,9 @@ Grouped icons are re-extracted from the full approved mockup. The dark panel aro
 - fixed Grocery, Amazon, Other Online Shopping group tiles by re-cropping from the original glossy mockup and rebuilding them as square transparent tiles
 - kept language switch as EN / 中文 / Español
 - keeps the v13/v14 assets around, but the app now uses assets_v15 and v15_* icons
+
+
+## v0.16 Amazon + Online fix
+- reverted Amazon and Other Online Shopping small icons to the original good square icons from v13
+- keeps all other v0.15 fixes
+- app now uses assets_v16 for small icons and shows version v0.16 Amazon + Online fix at the bottom

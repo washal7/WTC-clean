@@ -2,7 +2,7 @@
   const data = window.WTC_DATA;
   const WALLET_KEY = "wtc.wallet.v0.2";
   const PREFS_KEY = "wtc.prefs.v0.2";
-  const LANG_KEY = "wtc.lang.v0.15";
+  const LANG_KEY = "wtc.lang.v0.16";
   const $ = id => document.getElementById(id);
   const homeGrid = $("homeGrid");
   const resultPanel = $("resultPanel");
@@ -220,8 +220,8 @@
 
   function iconHTML(id) {
     const src = SINGLES.includes(id)
-      ? `v15_${escapeHtml(id)}.png?v=15`
-      : `assets_v15/icons/${escapeHtml(id)}.png?v=15`;
+      ? `v15_${escapeHtml(id)}.png?v=16`
+      : `assets_v16/icons/${escapeHtml(id)}.png?v=16`;
     return `<img class="icon-image" src="${src}" alt="">`;
   }
 

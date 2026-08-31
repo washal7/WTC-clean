@@ -1,4 +1,4 @@
-const CACHE_NAME = "wtc-v015-square-fix";
+const CACHE_NAME = "wtc-v016-amazon-online-fix";
 const ASSETS = [
   "./", "./index.html", "./style.css", "./app.js", "./rewards.js", "./manifest.webmanifest", "./icon.svg",
   "./assets_v11/icons/gas.png",
